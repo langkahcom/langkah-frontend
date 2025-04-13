@@ -19,7 +19,7 @@ export const Navbar = () => {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 mx-auto px-4 py-3 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[9999] mx-auto px-4 py-3 transition-all duration-300 ${
         isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm' : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
