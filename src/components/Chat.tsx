@@ -20,9 +20,9 @@ export const Chat = ({ onSendMessage, messages, isLoading }: ChatProps) => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
+  // useEffect(() => {
+  //   scrollToBottom();
+  // }, [messages]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

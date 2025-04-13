@@ -48,7 +48,7 @@ export const PromptSection = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-7xl">
+
       <div id="prompt-section" className="bg-white rounded-lg shadow-lg grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
         {/* Left side - Chat interface */}
         <motion.div 
@@ -91,6 +91,6 @@ export const PromptSection = () => {
           )}
         </motion.div>
       </div>
-    </div>
+
   );
 }
