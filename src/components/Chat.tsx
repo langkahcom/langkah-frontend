@@ -24,6 +24,11 @@ export const Chat = ({ onSendMessage, messages, isLoading }: ChatProps) => {
   //   scrollToBottom();
   // }, [messages]);
 
+  // Scroll to bottom when new messages are added
+  // but this is problematic as it can when user refresh the page
+  // it always scroll to bottom again
+  // alternative is we should split the HeroSection and the PromptSection
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
