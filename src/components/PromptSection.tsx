@@ -48,47 +48,49 @@ export const PromptSection = () => {
   };
 
   return (
-    <div id="prompt-section" className="min-h-screen grid grid-cols-1 lg:grid-cols-2">
-      {/* Left side - Chat interface */}
-      <motion.div 
-        className="flex flex-col h-screen sticky top-0 bg-white"
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="p-6 border-b border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900">Plan Your Journey</h2>
-          <p className="text-gray-600 mt-2">Chat with AI to plan your perfect Bali trip</p>
-        </div>
-
-        <div className="flex-1 overflow-hidden">
-          <Chat
-            messages={messages}
-            onSendMessage={handleSendMessage}
-            isLoading={isLoading}
-          />
-        </div>
-      </motion.div>
-
-      {/* Right side - Map visualization */}
-      <motion.div 
-        className="bg-gray-100 relative min-h-screen"
-        initial={{ opacity: 0, x: 20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        {!showMap ? (
-          <div className="flex items-center justify-center p-8 h-full">
-            <p className="text-gray-500 text-center">
-              Start a conversation to see destinations on the map
-            </p>
+    <div className="container mx-auto px-4 py-12 max-w-7xl">
+      <div id="prompt-section" className="bg-white rounded-lg shadow-lg grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
+        {/* Left side - Chat interface */}
+        <motion.div 
+          className="flex flex-col h-[800px]"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="p-6 border-b border-gray-200">
+            <h2 className="text-2xl font-bold text-gray-900">Plan Your Journey</h2>
+            <p className="text-gray-600 mt-2">Chat with AI to plan your perfect Bali trip</p>
           </div>
-        ) : (
-          <MapWithNoSSR destinations={baliDestinations} />
-        )}
-      </motion.div>
+
+          <div className="flex-1 overflow-hidden">
+            <Chat
+              messages={messages}
+              onSendMessage={handleSendMessage}
+              isLoading={isLoading}
+            />
+          </div>
+        </motion.div>
+
+        {/* Right side - Map visualization */}
+        <motion.div 
+          className="bg-gray-100 relative h-[800px]"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          {!showMap ? (
+            <div className="flex items-center justify-center p-8 h-full">
+              <p className="text-gray-500 text-center">
+                Start a conversation to see destinations on the map
+              </p>
+            </div>
+          ) : (
+            <MapWithNoSSR destinations={baliDestinations} />
+          )}
+        </motion.div>
+      </div>
     </div>
   );
 }
